@@ -1,0 +1,36 @@
+resume: False
+data:
+  path: ~/3D/implicit_surface/data/CRCIR_dataset/Shapenet_points/fps_3000
+  gt_path: ~/3D/implicit_surface/data/CRCIR_dataset/Shapenet_points/meta_data
+  dim: 3
+  
+model:
+  encoder: attention
+  encoder_kwargs:
+    in_channels: 3
+    latent_size: 64
+    out_channels: 8
+    K: 8
+  decoder: onet       
+  decoder_kwargs:
+    out_dim: 3
+    hidden_size: 64
+    n_blocks: 3
+
+training:
+  out_dir: result_AE/ex0_lr2
+  from_pretrained: False
+  pretrained_path: result/ex0/checkpoint_best.pth
+  batch_size: 36
+  lr: 0.01
+  model_selection_metric: cd_loss
+  model_selection_mode: minimize
+  print_every: 100
+  peak: 0.028
+  validate_every: 300
+  checkpoint_every: 5000
+  backup_every: 10000
+  n_workers: 8
+  n_workers_val: 8
+  lambda: 0.005
+
