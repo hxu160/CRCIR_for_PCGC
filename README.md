@@ -1,4 +1,4 @@
-# CRCIR_for_PCGC
+# [ECCV 2024] Fast Point Cloud Geometry Compression with Context-based Residual Coding and INR-based Refinement
 This is the official PyTorch implementation of our paper "Fast Point Cloud Geometry Compression with Context-based Residual Coding and INR-based Refinement" (ECCV 2024). [arXiv](https://arxiv.org/pdf/2408.02966)
 # Abstract
 Compressing a set of unordered points is far more challenging than compressing images/videos of regular sample grids, because of the
